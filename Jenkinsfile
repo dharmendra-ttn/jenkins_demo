@@ -22,7 +22,7 @@ node {
   stage('run') {
     def jarFile = 'build/libs/jenkins-demo-0.0.1-SNAPSHOT.jar'
     myGradleContainer.inside() {
-      sh "java -jar ${jarFile}"
+      sh "java -jar ${jarFile} &"
     }
   }
 }
