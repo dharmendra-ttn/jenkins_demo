@@ -21,8 +21,8 @@ node {
 
   stage('run') {
     def jarFile = 'build/libs/jenkins-demo-0.0.1-SNAPSHOT.jar'
-       sh """
-         docker run -d -p 9000:9000 -v ${pwd()}/${jarFile}:/app.jar openjdk:21 java -jar /app.jar
-       """
+    myGradleContainer.inside() {
+      sh "java -jar ${jarFile}"
+    }
   }
 }
