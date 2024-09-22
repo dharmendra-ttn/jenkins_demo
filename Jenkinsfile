@@ -8,13 +8,13 @@ node {
   }
 
   stage('test') {
-    myGradleContainer.inside("-v ${env.HOME}/.gradle:/home/gradle/.gradle --user jenkins") {
+    myGradleContainer.inside() {
       sh './gradlew test'
     }
   }
 
   stage('build') {
-    myGradleContainer.inside("-v ${env.HOME}/.gradle:/home/gradle/.gradle --user jenkins") {
+    myGradleContainer.inside() {
       sh './gradlew build'
     }
   }
