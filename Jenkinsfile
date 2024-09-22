@@ -9,13 +9,13 @@ node {
 
   stage('test') {
     myGradleContainer.inside("-v ${env.HOME}/.gradle:/home/gradle/.gradle") {
-      sh 'gradle test'
+      sh './gradlew test'
     }
   }
 
   stage('build') {
     myGradleContainer.inside("-v ${env.HOME}/.gradle:/home/gradle/.gradle") {
-      sh 'gradle build'
+      sh './gradlew build'
     }
   }
 
