@@ -1,11 +1,5 @@
 node {
 
- stage('Install Docker') {
-
-        sh 'apt-get update && apt-get install -y docker.io'
-
-    }
-
   def myGradleContainer = docker.image('gradle:8.10-jdk21-alpine') // Update to a Gradle image with JDK 21
   myGradleContainer.pull()
 
