@@ -14,7 +14,7 @@ node {
   }
 
   stage('build') {
-    myGradleContainer.inside('-p  9000:9000') {
+    myGradleContainer.inside() {
       sh './gradlew build'
     }
   }
